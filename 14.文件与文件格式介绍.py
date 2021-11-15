@@ -39,3 +39,25 @@ f.close()  # 回收操作系统中的占用
 print(f)  # 应用程序内存中变量f仍然存在
 f.read()  # 但不能在进行读写操作
 # del f  # 回收应用程序中内存占用，由Python垃圾回收机制自动实现
+
+# 没有指定encoding参数操作系统会使用自己默认的编码
+# Linux，Mac系统默认utf-8
+# Windows默认gbk
+f = open('我与凉宫春日之二三事.txt', mode='rt',encoding='utf-8')
+res = f.read()
+print(res)
+f.close()
+
+# with上下文管理：可以省掉f.close()操作
+# 文件对象又称文件句柄
+with open('我与凉宫春日之二三事.txt', mode='rt',encoding='utf-8') as f1:  # 功能同f1=open('a.txt', mode='rt')
+    res = f1.read()
+    print(res)
+    f.write('凉宫春日')
+# 打开多个
+# with open('a.txt', mode='rt',encoding='utf-8') as f1, \
+#     open('a.txt', mode='rt', encoding='utf-8') as f1:
+#     res1 = f1.read()
+#     res2 = f2.read()
+#     print(res1)
+#     print(res2)

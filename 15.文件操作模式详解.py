@@ -71,4 +71,6 @@ with open('The story about suzumiya haruhi and me', mode='at', encoding='utf-8')
 #     res = f1.read()
 #     f2.write(res)
 
+# 4.x（了解）:只写模式，不可读，不存在则创建，存在则报错
+
 # 了解：+不能单独使用，必须配合r,w,a

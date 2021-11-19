@@ -53,3 +53,21 @@ with open('我与凉宫春日之二三事.txt', mode='rb') as f:
 with open('我与凉宫春日之二三事.txt', mode='rb') as f:
     for line in f:  # 按行取值，遇到\n结束该行
         print(line,len(line))
+        
+# f.readline()  # 读取一行内容,光标移动到第二行首部
+# f.readlines()  # 读取每一行内容,存放于列表中
+# f.writelines(['333\n','444\n'])  # 文件模式
+# f.writelines([bytes('333\n',encoding='utf-8'),'444\n'.encode('utf-8')]) #b模式
+
+# 了解
+# f.readable()  # 文件是否可读
+# f.writable()  # 文件是否可读
+# f.closed  # 文件是否关闭
+# f.encoding  # 如果文件打开模式为b,则没有该属性
+# f.flush()  # 立刻将文件内容从内存刷到硬盘
+# f.name
+with open('我与凉宫春日之二三事.txt', mode='wb') as f:
+    # f.readable()  # False
+    # f.writable()  # True
+    # f.closed  # False
+    # f.flush()  # 立刻将文件内容从内存刷到硬盘

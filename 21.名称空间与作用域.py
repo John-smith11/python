@@ -91,6 +91,23 @@ print(x)  # 22,全局变量改了
 # func()
 # print(l)  # [11, 22]
 
+# l = [11,]
+#
+# def func():
+#     l = [22,]
+#
+# func()
+# print(l)  # [11]
+
+# l = [11,]
+#
+# def func():
+#     global l
+#     l = [22,]
+#
+# func()
+# print(l)  # [22]
+
 # nonlocal:修改函数外层函数包含的名字对应的值（不可变类型）
 # x = 0
 # def f1():

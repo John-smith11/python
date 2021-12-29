@@ -126,6 +126,7 @@ from foo import get as g
 import sys
 # 值为一个列表，存放了一系列的文件夹
 # 其中第一个文件夹是当前执行文件所在的文件夹
+# 环境变量是以执行文件为准的，所有被导入的模块或者说后续其他文件引用的sys.path都是参照执行文件的sys.path
 print(sys.path)
 
 # 了解：sys.modules查看已经加载到内存中的模块
@@ -141,3 +142,24 @@ import sys
 # 找foo.py就把foo.py的文件路径添加到环境变量中
 sys.path.append(r'绝对路径')
 import foo
+
+# 编写一个规范的模块
+
+"The module is used to..." #模块的文档描述
+
+import sys #导入模块
+
+x=1 #定义全局变量,如果非必须,则最好使用局部变量,这样可以提高代码的易维护性,并且可以节省内存提高性能
+
+class Foo: #定义类,并写好类的注释
+    'Class Foo is used to...'
+    pass
+
+def test(): #定义函数,并写好函数的注释
+    'Function test is used to…'
+    pass
+
+if __name__ == '__main__': #主程序
+    test() #在被当做脚本执行时,执行此处的代码
+
+

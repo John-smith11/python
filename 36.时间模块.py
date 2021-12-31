@@ -52,3 +52,19 @@ print(time.strptime('2021-12-29 11:11:11','%Y-%m-%d %H:%M:%S'))
 
 # 休眠
 time.sleep(3)
+
+# 案例：打印进度条功能
+import time
+
+def progress(percent, width = 50):
+    if percent >=1 :
+        percent =1
+    show_str = ('[%%-%ds]' % width) % ('#'*int(width*percent))
+    print('\r%s %d%%' %(show_str,int(100*percent)), end='')
+
+recv_size = 0
+toto_size = 1022222
+while recv_size < toto_size:
+    time.sleep(0.1)
+    recv_size += 1024
+    progress(recv_size/toto_size)

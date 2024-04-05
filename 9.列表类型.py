@@ -102,7 +102,7 @@ print(l.count(158))
 # l.index()  # 查元素的第一个索引，找不到就报错
 print(l.index('凉宫春日'))
 
-# l.clear()  # 清楚整个列表
+# l.clear()  # 清除整个列表
 # l.clear()
 # print(l)
 
